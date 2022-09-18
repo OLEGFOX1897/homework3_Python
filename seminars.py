@@ -1,74 +1,85 @@
-# Задача 1
-# Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+# Задача 1 - Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр. Учтите, что числа могут быть отрицательными
 # Пример:
+# 67.82 -> 23
+# 0.56 -> 11
 
-# - 6 -> да
-# - 7 -> да
-# - 1 -> нет
-
-# day=int(input('Введите день недели (от 1 до 7) ='))
-# if day==6 or day==7:
-#     print(day,'-> да')
+# number=float(input('Введите вещественное число N='))
+# if number<0:
+#     number=number*(-1)
+#     signNum=-1
 # else:
-#     print(day,'-> нет')   
+#     signNum=1 
+#     strNumber=str(number)
+# sumDigit=0
+# for ind in list(strNumber):
+#     if ind!='.':
+#         sumDigit=sumDigit+int(ind)
+# print(f'{number*signNum} -> {sumDigit}')
 
-# Задача 2
-# Напишите программу для. проверки истинности утверждения (X ⋁ Y ⋁ Z) = X ⋀ Y ⋀ Z для всех значений предикат.
-# print (f'X\tY\tZ\tresult')
-# list=[0,1]
-# for x in list:
-#     for y in list:
-#         for z in list:
-#             print(f'{x}\t{y}\t{z}\t{not (x or y or z)==(not x and not y and not z)}')
+# Задача 2 Напишите программу, которая принимает на вход число N и выдает набор произведений (набор - это список) чисел от 1 до N.
+# Не используйте функцию math.factorial.
+# Добавьте проверку числа N: чтобы пользователь не мог ввести буквы.
+# Пример:
+# - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
+
+# ind=1
+# factorial=1
+# while ind>0:
+#     strNumber=input('Введите целое положительное число N=')
+#     for i in list(strNumber):
+#         if i=='.' or strNumber.isnumeric()==0:
+#             ind=1
+#         else:
+#             ind=0
+#     if ind>0:
+#         print('Проверьте введеное значение')
+# for ind in range(1,int(strNumber)+1):
+#     factorial=ind*factorial
+#     list.append(factorial)
+# print(f'{strNumber}->{list}')
+
+# # Задача 3 - Палиндромом называется слово, которое в обе стороны читается одинаково: "шалаш", "кабак".
+# А еще есть палиндром числа - смысл также в том, чтобы число в обе стороны читалось одинаково, но есть одно "но".
+# Если перевернутое число не равно исходному, то они складываются и проверяются на палиндром еще раз.
+# Это происходит до тех пор, пока не будет найден палиндром.
+# Напишите такую программу, которая найдет палиндром введенного пользователем числа.
+
+# ind=0
+# while ind==0:
+# 	num=int(input('Введите целое положительное чило N = '))
+# 	if num<0:
+# 		print('Повторите ввод')
+# 	else:
+# 		ind=1
+# def num2(num):
+# 	num2=0
+# 	listNum=list(str(num))
+# 	lenListNum=len(listNum)
+# 	for i in range(0,lenListNum):
+# 		num2=num2+10**(lenListNum-1-i)*int(listNum[lenListNum-1-i])
+# 	return num2
+# num1=num
+# i=0
+# while i==0:
+# 	if num1==num2(num1):
+# 		print(f'Полиндром числа {num} -> {num1}')
+# 		i=1
+# 	else:
+# 		num1=num1+num2(num1)
+# 		i=0
 
 
-# Задача 3
-# Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти
-# плоскости, в которой находится эта точка (или на какой оси она находится).
+# 4 - Реализуйте выдачу случайного числа
+# не использовать random.randint и вообще библиотеку random
+# Можете использовать xor, биты, библиотеку time или datetime (миллисекунды или наносекунды) - для задания случайности
+# Учтите, что есть диапазон: от(минимальное) и до (максимальное)
+# данное решение было предложено на очередном семинаре
+# но мной было разобрано т.к. в исходной версии у меня не запустилось
 
-# print ('Введите координаты точки на плоскости X и Y (не равные 0)')
-# ordinatY=float(input("Y= "))
-# abscisaX=float(input('X= '))
-# if ordinatY==0 and abscisaX==0:
-#     print('Неправильный ввод! Координаты точки равны нулю')
-# elif ordinatY>0 and abscisaX>0:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> 1')
-# elif ordinatY>0 and abscisaX<0:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> 2')
-# elif ordinatY<0 and abscisaX<0:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> 3')
-# elif ordinatY<0 and abscisaX>0:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> 4')
-# elif ordinatY==0:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> на оси X')
-# else:
-#     print('X= ', abscisaX, 'Y= ', ordinatY, '-> на оси Y')
-
-# Задача 4
-# Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y)
-
-# numberQuater=int(input('Введите номер четверти на плоскости OXY (1,2,3,4) = '))
-# if numberQuater==1:
-#     print('X > 0 и Y > 0')
-# elif numberQuater==2:
-#     print('X < 0 и Y > 0')
-# elif numberQuater==3:
-#     print('X < 0 и Y < 0')
-# elif numberQuater==4:
-#     print('X > 0 и Y < 0')
-# else:
-#     print ('Неверный ввод номера четверти! Повторите ')
-
-# Задача 5
-# Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
-# print ('Введите координаты точки A на оси OXY')
-# abscisA=float(input('Xa= '))
-# ordinateA=float(input('Ya= '))
-# print ('Введите координаты точки Bа оси OXY')
-# abscisB=float(input('Xb= '))
-# ordinateB=float(input('Yb= '))
-# if abscisA==abscisB and ordinateA==ordinateB:
-#     print('Координаты точек А и В совпадают')
-# else:
-#     lenthAB=sqrt((ordinateB-ordinateA)**2+(abscisA-abscisB)**2)
-#     print('A (',abscisA,ordinateA,'); B (',abscisB,ordinateB,') ->', round(lenthAB,2))
+import datetime, math
+def ranDigit(min, max):
+    d=max-min
+    ms=datetime.datetime.now().microsecond/(10**6)
+    rand_digit=math.ceil(d*ms)
+    return min+rand_digit
+print(ranDigit(-100,100)) 

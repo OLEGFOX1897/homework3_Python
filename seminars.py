@@ -73,13 +73,23 @@
 # не использовать random.randint и вообще библиотеку random
 # Можете использовать xor, биты, библиотеку time или datetime (миллисекунды или наносекунды) - для задания случайности
 # Учтите, что есть диапазон: от(минимальное) и до (максимальное)
-# данное решение было предложено на очередном семинаре
-# но мной было разобрано т.к. в исходной версии у меня не запустилось
 
-import datetime, math
-def ranDigit(min, max):
-    d=max-min
-    ms=datetime.datetime.now().microsecond/(10**6)
-    rand_digit=math.ceil(d*ms)
-    return min+rand_digit
-print(ranDigit(-100,100)) 
+# данное решение было предложено на очередном семинаре, но мной было переработанно т.к. в исходной версии у меня не запустилось 
+# если сможете, напишите почему?
+
+# import datetime, math
+# # моя реализация ----------------------------------------------
+# def ranDigit(min, max):
+#     d=max-min
+#     ms=datetime.datetime.now().microsecond/(10**6)
+#     rand_digit=math.ceil(d*ms)
+#     return min+rand_digit
+# print(ranDigit(-100,100)) 
+# # предложенная реализация-----------------------------------------------
+# def ranDigit(_min, _max ):
+#     d=_max-_min
+#     ms= datatime.datetime.today().microsecond/(10**6)
+#     print(f'{ms}')
+#     return _min+_max.ceil(d*ms) # .ceil округляет
+# print(ranDigit(1,10)) 
+# # ---------------------------------------------------------------------
